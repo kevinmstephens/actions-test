@@ -14,6 +14,7 @@ jobs:
           release_branch: main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        release_strategy: tag
       - name: Upload release notes
         if: steps.tag_and_prepare_release.outputs.tag
         uses: Roang-zero1/github-create-release-action@master
@@ -21,3 +22,4 @@ jobs:
           created_tag: ${{ steps.tag_and_prepare_release.outputs.tag }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        update_existing: true
