@@ -6,7 +6,7 @@ on:
 jobs:
   enforce-label:
     runs-on: ubuntu-latest
-    if: ${{ !startsWith(github.head_ref, 'pr-') }}
+    if: ${{ !startsWith(github.head_ref, 'renovate') }}
     steps:
     - uses: yogevbd/enforce-label-action@2.1.0
       with:
